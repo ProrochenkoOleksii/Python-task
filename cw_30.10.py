@@ -8,6 +8,15 @@ elif string[-1]=="%":
     string = string[0:len(string)-1]
 print (string)
 
+string_new=input ("Input transaction string ")
+string_last=" "
+for i in string_last:
+    if i=="&":
+        pass
+    else:
+        string_last+=i
+print (string_last)
+
 money=int(input("how much money per month? "))
 age=int(input("your age "))
 job=input("do you have a job?")
