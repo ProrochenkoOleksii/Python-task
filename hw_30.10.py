@@ -19,9 +19,9 @@ print (f"Hello, {name}, on your next birthday you will be {age_next} years")
 #exercise 3
 import random
 string = input ("Input your string:")
-n=1
-while n<=5:
-    result_str[n] = ''.join((random.choice(string)) for i in range(len(string)))
-    print(result_str[n])
-    n+=1
-    break
+#n=1
+#while n<=5:
+    #result_str[n] = ''.join((random.choice(string)) for i in range(len(string)))
+    #print(result_str[n])
+   # n+=1
+   #break
