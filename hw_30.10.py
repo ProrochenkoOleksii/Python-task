@@ -1,23 +1,42 @@
-#exercise 1
+# exercise1
+string = "hello world"
+lenght = len(string)
+string_new = string[0:2] + string[lenght-2:lenght]
+print (string_new)
 
-import random
-random.randint(1,10)
-data = int (input("Input number from 1 to 10:"))
-print (random.randint(1,10))
-if data==random.randint(1,10):
-    print ("You are the winner")
+string_1 = "my"
+lenght_1 = len(string_1)
+string_neww = string_1[0:2] + string_1[lenght_1-2:lenght_1]
+print (string_neww)
+
+string_2 = "x"
+if len(string_2)<2:
+    print("Empty String")
 else:
-    print ("You are the looser")
+    pass
+
+# exercise2
+num = "4638495736"
+l = len(num)
+if l <= 10:
+    print (f"Phone number {num} is TRUE")
+else:
+    print (f"Phone number {num} is FALSE")
+
+#exercise3
+x=21+35-17
+ans = input ("Answer is:")
+if ans != 39:
+    print ("You are loose")
+else:
+    print ("You are wright")
 
 
-#exercise 2
-name = input ("Input your name ")
-age = int (input ("Input your age "))
-age_next = age + 1
-print (f"Hello, {name}, on your next birthday you will be {age_next} years")
-
-#exercise 3
-import random
-string = input ("Input your string:")
-result_str = ''.join((random.choice(string)) for i in range(len(string)))
-print(result_str)
+#exercise4
+name = "oleksii"
+name_new = input ("input your name:")
+name_new_d=str.casefold (name_new)
+if name == name_new_d:
+    print ("TRUE")
+else:
+    print ("FALSE")
