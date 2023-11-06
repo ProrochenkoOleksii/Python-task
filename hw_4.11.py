@@ -25,21 +25,24 @@
 # між 2 початковими списками без дублікатів.
 # Обмеження: використовуйте лише цикл while і випадковий модуль для 
 # генерації чисел
-# from random import randint
-# list1 = [randint(1,10) for i in range (10)]
-# list2 = [randint(1,10) for i in range (10)]
-# list3 = []
-# print (list1)
-# print (list2)
-# n=0
-# k=0
-# while k<10 and n<10:
-#     if list1[n] == list2[k]:
-#         list3.append(-1,list1[n])
-#         k+=1
-    
-
-
+from random import randint
+list1 = [randint(1,10) for i in range (10)]
+list2 = [randint(1,10) for i in range (10)]
+list3 = list1 + list2
+print (list1)
+print (list2)
+print (list3)
+l=len(list3)
+print (l)
+n=1
+while n<l:
+    if list3[n-1]==list3[n]:
+        list3.pop(n)
+        print (list3)
+        n+=1
+    else:
+        n+=1
+    print (list3)
 
 # Завдання 3
 # Витяг чисел.
@@ -49,13 +52,13 @@
 # роздрукуйте список.
 # Обмеження: використовуйте лише цикл while для ітерації
 
-my_list=[*range(1,101)]
-my_list_new=[]
-i=0
-while i<100:
-    if my_list[i]%7==0 and my_list[i]%5!=0:
-        my_list_new.append(my_list[i])
-        i+=1
-    else:
-        i+=1
-print (my_list_new)
+# my_list=[*range(1,101)]
+# my_list_new=[]
+# i=0
+# while i<100:
+#     if my_list[i]%7==0 and my_list[i]%5!=0:
+#         my_list_new.append(my_list[i])
+#         i+=1
+#     else:
+#         i+=1
+# print (my_list_new)
