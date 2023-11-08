@@ -5,14 +5,11 @@
 
 my_list = ["car", "apple", "tv", "car", "bus", "bus", "car"]
 my_set=set(my_list)
-for n in my_list:
-    list_c=my_list.count(n)
-    print(list_c)
 
-print (set(my_list))
-dict1={(my_list[n], list_c[n]) for n in my_list}
-print (dict1)    
+dict_new={key: my_list.count(key) for key in my_set }
 
+print (dict_new)
+print ("\n")
 
 # Завдання 2
 # Обчисліть загальну ціну акцій, де загальна ціна є сумою
