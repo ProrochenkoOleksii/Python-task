@@ -4,18 +4,19 @@
 # випадкових чисел довжиною 10
 # Обмеження: використовуйте лише цикл while і випадковий модуль для 
 # генерації чисел
-# from random import randint
-# list = [randint(1,100) for i in range (10)]
-# n=0
-# biggest=0
-# while n<10:
-#     if list[n]>biggest:
-#         biggest=list[n]
-#         n+=1
-#     else:
-#         n+=1
-# print (list)
-# print (biggest)
+from random import randint
+list = [randint(1,100) for i in range (10)]
+n=0
+biggest=0
+while n<10:
+    if list[n]>biggest:
+        biggest=list[n]
+        n+=1
+    else:
+        n+=1
+print (list)
+print (biggest)
+print ("\n")
 
 
 # Завдання 2
@@ -33,16 +34,16 @@ print (list1)
 print (list2)
 print (list3)
 l=len(list3)
-print (l)
 n=1
 while n<l:
-    if list3[n-1]==list3[n]:
+    if list3[n]==list3[n-1]:
         list3.pop(n)
         print (list3)
         n+=1
     else:
         n+=1
-    print (list3)
+print (list3)
+print ("\n")
 
 # Завдання 3
 # Витяг чисел.
@@ -52,13 +53,13 @@ while n<l:
 # роздрукуйте список.
 # Обмеження: використовуйте лише цикл while для ітерації
 
-# my_list=[*range(1,101)]
-# my_list_new=[]
-# i=0
-# while i<100:
-#     if my_list[i]%7==0 and my_list[i]%5!=0:
-#         my_list_new.append(my_list[i])
-#         i+=1
-#     else:
-#         i+=1
-# print (my_list_new)
+my_list=[*range(1,101)]
+my_list_new=[]
+i=0
+while i<100:
+    if my_list[i]%7==0 and my_list[i]%5!=0:
+        my_list_new.append(my_list[i])
+        i+=1
+    else:
+        i+=1
+print (my_list_new)
