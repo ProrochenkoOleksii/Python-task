@@ -19,7 +19,7 @@ print ("\n")
 # Змусьте функцію вивести значення словника, щоб переконатися, що вона 
 # працює належним чином.
 # def make_country(name, capital):
-#     my_dict=dict([(key, value) for key in name for value is capital])
+#     my_dict=dict([(key, value) for key in name for value in capital])
 #     print (my_dict)
 
 # make_country("ukraine", "kyiv")
