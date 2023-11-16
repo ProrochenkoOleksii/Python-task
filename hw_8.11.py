@@ -18,11 +18,13 @@ print ("\n")
 # використовуючи «name» як ключ і «capital» як параметр. 
 # Змусьте функцію вивести значення словника, щоб переконатися, що вона 
 # працює належним чином.
-# def make_country(name, capital):
-#     my_dict=dict([(key, value) for key in name for value in capital])
-#     print (my_dict)
-
-# make_country("ukraine", "kyiv")
+def make_country(name, capital):
+    my_dict=dict()
+    my_dict.update({name: capital})
+    print (my_dict)
+a=input("input name of country: ")
+b=input("input capital: ")
+make_country(a,b)
  
 
 # Завдання 3
