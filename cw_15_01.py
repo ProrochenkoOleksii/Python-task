@@ -1,5 +1,4 @@
-# 1. Отримайте поточний статус війни як англійською, так і українською мовою.
-
+# 1. Get the current war status in both English and Ukrainian.
 # import requests
 
 # r1 = requests.get("https://russianwarship.rip/api/v2/war-info/status")
@@ -10,8 +9,7 @@ with open ("my_file_json1.json", "w") as my_file:
     json.dump(my_json1,my_file)
 
 
-
-# 2. Отримайте останню статистику по війні
+# 2. Get the latest war statistics
 import requests
 
 r2 = requests.get("https://russianwarship.rip/api/v2/statistics/latest")
@@ -21,7 +19,7 @@ my_json2 = r2.json()
 with open ("my_file_json2.json", "w") as my_file:
     json.dump(my_json2,my_file)
 
-# 3. Отримайте статистику за 2 різні дні (виберіть дату самостійно).
+# 3. Get statistics for 2 different days (choose the date yourself).
 # import requests
 
 # r3 = requests.get("https://russianwarship.rip/api/v2/statistics/2023-09-30")
