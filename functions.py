@@ -27,7 +27,38 @@ elif money>1000 and age>20 and job=="no":
 else:
     print ("Without money")
 
-# 1. Tax calculator:
+
+# 1. Write a function that takes two arguments (numbers) and returns their sum.
+def my_funct1(n1, n2):
+    n3=n1+n2
+    return n3
+
+q=my_funct1(5, 10)
+print(q)
+print ("\n")
+
+# 2. Write a function that takes an integer and checks if it is even.
+# The function should return True if the number is even, and False if it is odd.
+def my_funct2(k1):
+    type(k1)==int
+    if k1%2==0:
+        return True
+    else:
+        return False
+    
+print(my_funct2(189))
+
+
+# 3. Write a function that takes a list of numbers and returns the largest of them.
+def my_funct3(my_list):
+    max_list=max(my_list)
+    return max_list
+
+my_list_new=[123,2,4,5,7,0] 
+max_new=my_funct3(my_list_new)
+print (max_new)
+
+# 4. Tax calculator:
 # Write a function that takes an income amount and calculates the total amount
 # of tax, taking into account different rates of income taxes.
 
@@ -47,7 +78,7 @@ print ("Your tax is: ", tax_new)
 print ("\n")   
 
 
-# 2. Calculation of the cost of delivery:
+# 5. Calculation of the cost of delivery:
 # Write a function that takes the weight of the item and the distance to the location
 # of deliveries and calculates the cost of delivery according to the specified tariffs.
 
@@ -67,7 +98,7 @@ print ("Your delivery cost, $: ", total_new)
 print ("\n")
 
 
-# 3.Project cost accounting system:
+# 6.Project cost accounting system:
 # Write a function that takes the value of working hours, the number of hours
 # and additional costs and calculates the total cost of the project.
 
@@ -89,7 +120,7 @@ print ("Your total project cost, $: ", total_cost_new)
 print ("\n")
 
 
-# 4. Calculation of the average monthly turnover:
+# 7. Calculation of the average monthly turnover:
 # Develop a function that takes monthly sales for the last year and calculates
 # average monthly turnover.
 
@@ -114,7 +145,7 @@ k=ave_month(my_mon_sales.split(","),my_mon_cost.split(","))
 print(k)
 
 
-# 5. Customer management system:
+# 8. Customer management system:
 # Write functions for adding new customers, changing contact information
 # information and output of the list of customers.
 
@@ -143,7 +174,7 @@ your_client1_new=input("Input new client ")
 k=client_new(your_client1_new)
 print(k)
 
-# 1.Write a function that accepts any number of arguments
+# 9.Write a function that accepts any number of arguments
 # and returns their sum.
 def my_function(*num):
     sum=0
