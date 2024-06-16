@@ -426,3 +426,89 @@ print(f"*: {x*y}\n")
 print(f"+: {x+y}\n")
 print(f"-: {x-y}\n")
 print(f"/: {x/y}\n")
+
+
+# Task 8
+
+# Create a class method called `validate` that should be called from
+# of the `__init__` method to check the parameter email,
+# of the passed constructor. The logic inside the `validate` method can be
+# is to check if the passed email parameter is valid
+# in the email string.
+
+# Confirm email:
+
+# Valid email address format
+
+# Email address
+
+class MyClass:
+    def __init__(self, email):
+        self.email = email
+        
+    def validate(self):
+        if "@" in self.email:
+            if self.email[-1]=="@":
+                print("Wrong email address!")
+            elif self.email[0]=="@":
+                print("Wrong email address!")
+            else:
+                return "Emil address is validate"
+        else:
+            print("Wrong email address!")
+
+em = MyClass("@gmail.com")
+print(em.validate())        
+
+
+# Task 9
+
+# Implement 2 classes, the first is Boss and the second is Worker.
+# Worker has a 'boss' property and its value must be an instance of Boss.
+# You can override this value, but you should check if it's new
+# value is Boss. Every boss has a list of his employees.
+# You must implement a method that allows you to add workers to a boss.
+# You are not allowed to add instances of the Boss class to the list of workers
+# directly via attribute access, use getters instead
+# and setters!
+# You can modify the existing code.
+# id_ is just a random unique integer
+ 
+class Boss:
+    def __init__(self, id_: int, name: str, company: str):
+        self.id_ = id_
+        self.name = name
+        self.company = company
+        self.workers = []
+
+    def new_worker(self,id_,name,company,boss):
+        workers = Worker(id_=id_,name=name,company=company,boss=boss)
+        self.workers.append(workers)
+        return workers  
+    
+    def __str__(self):
+        workers_info = "\n".join(str(worker) for worker in self.workers)
+        return f"Information about your workers: {workers_info}"
+    
+class Worker:
+    def __init__(self, id_: int, name: str, company: str, boss: Boss):
+        self.id_ = id_
+        self.name = name
+        self.company = company
+        self.boss = boss
+
+    def __str__(self):
+        return f"\n Worker with # {self.id_} {self.name} from company: {self.company}"
+
+      
+
+boss1=Boss(2635,"John","KPMG")
+boss2=Boss(26005,"Kris","OKKO")
+
+boss2.new_worker(5106,"Serg","OKKO",boss2)
+
+boss1.new_worker(5786,"Ivan","Coca-cola",boss1)
+boss1.new_worker(658,"Peter","KPMG",boss1)
+
+print(boss1.__str__())
+print(boss2.__str__())
