@@ -243,3 +243,186 @@ try:
 except Exception:  
     print("my exception")
 
+# Task 5
+
+# Method overloading.
+
+# Create a base class called Animal with a method called talk,
+# and then create two subclasses: Dog and Cat and make their own implementation
+# of the talk method by another. For example, a dog can type "woof woof",
+# and the cat's "meow".
+
+# Also, create a simple generic function that takes as input
+# instance of the Cat or Dog classes and executes the talk method on the input parameter.
+
+class Animal():
+    def __init__(self,animal):
+        self.animal = animal
+    
+    def talk(self):
+        if animal=="Dog":
+            return f"{self.animal} say: 'gav-gav'"
+        elif animal=="Cat":
+            return f"{self.animal} say: 'myau-myau'"
+        else:
+            return f"{self.animal} can not speak :-)"
+
+
+
+class Dog(Animal):
+    def __init__(self,type):
+        self.type = type
+
+    def talk(self):
+        return f"{self.type} say: 'gav-gav'"
+
+
+class Cat(Animal):
+    def __init__(self,type):
+        self.type = type
+
+    def talk(self):
+        return f"{self.type} say: 'myau-myau'"
+
+animal=Animal("Bird")
+dog1=Dog("My dog")
+cat1=Cat("My cat")
+print(cat1.talk())
+print(dog1.talk())
+print(animal.talk())
+
+
+# Task 6
+
+# Library
+# Write a class structure that implements the library. Classes:
+# 1) Library - name, books = [], authors = []
+# 2) Book – title, year, author (the author must be an instance of the Author class)
+# 3) Author - name, country, birthday, books = []
+
+# Library class
+# Methods:
+# - new_book(name: str, year: int, author: Author) - returns an instance
+# of the Book class and adds the book to the list of books for the current library.
+# - group_by_author(author: Author) - returns a list of all grouped books
+# by the specified author
+# - group_by_year(year: int) - returns a list of all books grouped by
+# in the specified year
+
+# All 3 classes must have readable __repr__ and __str__ methods.
+# Also, the book class must have a class variable that contains the count
+# of all existing books
+
+class Library:
+    def __init__(self, name):
+        self.name = name
+        self.books = []
+
+    def new_book(self, title, year, authors):
+        book = Book(title=title, year=year, authors=authors)
+        self.books.append(book)
+        return book
+
+    def __str__(self):
+        book_info = "\n".join(str(book) for book in self.books)
+        return f"This is the library with the following books:\n{book_info}"
+
+
+    def group_by_author(self, author):
+        return [book for book in self.books if author == book.authors]
+
+    def group_by_year(self, year):
+        return [book for book in self.books if book.year == year]
+
+
+class Book:
+    def __init__(self, title, year, authors):
+        self.title = title
+        self.year = year
+        self.authors = authors
+
+    def __repr__(self):
+        return f"Book(title='{self.title}', year={self.year}, authors={self.authors})"
+
+    def __str__(self):
+        return f"{self.title} ({self.year}), Authors: {self.authors}"
+
+class Author:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"{self.name}"
+
+
+author1=Author("Franko")
+author2=Author("Eco")
+author3=Author("Chase")
+book1=Book("Zahar Berkut",1885,author1)
+book2=Book("Rose's name",1980,author2)
+book3=Book("Baudolino",2000,author2)
+book4=Book("Only cash",1939,author3)
+
+library=Library(name="My Library")
+
+library.new_book("Zahar Berkut",1885,author1)
+library.new_book("Rose's name",1980,author2)
+library.new_book("Baudolino",2000,author2)
+
+print(library)
+
+var_author=library.group_by_author(author1)
+var_year=library.group_by_year(2000)
+print(var_year)
+print(var_author)
+
+# Task 7
+# fraction
+# Create a Fraction class that will represent all basic arithmetic
+# logic for fractions (+, -, /, *) with proper error checking and handling.
+# Need to add magic methods for math operations and operations
+# comparison between objects of the Fraction class
+
+class Fraction:
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def __mul__(self,other):
+        new_numerator = self.numerator * other.numerator
+        new_denominator = self.denominator * other.denominator
+        return Fraction(new_numerator,new_denominator)
+    
+    def __add__(self,other):
+        a=self.numerator * other.denominator
+        b=other.numerator * self.denominator
+        new_numerator=a+b
+        new_denominator=self.denominator * other.denominator
+        return Fraction(new_numerator,new_denominator)
+    
+    def __sub__(self,other):
+        a=self.numerator * other.denominator
+        b=other.numerator * self.denominator
+        new_numerator=a-b
+        new_denominator=self.denominator * other.denominator
+        return Fraction(new_numerator,new_denominator)
+
+    def __truediv__(self,other):
+        if other.numerator !=0:
+            new_numerator=self.numerator * other.denominator
+            new_denominator=other.numerator * self.denominator
+            return Fraction(new_numerator,new_denominator)
+        else:
+            print("We can not divizion for 0")
+
+    def __str__(self):
+        return f"result {self.numerator}/{self.denominator}"
+    
+
+x = Fraction(1, 4)
+y = Fraction(0, 2)
+
+print(f"*: {x*y}\n")
+print(f"+: {x+y}\n")
+print(f"-: {x-y}\n")
+print(f"/: {x/y}\n")
