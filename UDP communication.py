@@ -1,8 +1,8 @@
-# UDP-комунікація:
-# Створіть простий UDP-сервер, який може приймати дані від клієнтів.
+# UDP communication:
+# Create a simple UDP server that can accept data from clients.
 
-# * потрібно буде використати функцію recvfrom() замість recv() як це було
-# для TCP протоколу реалізовано
+# * will need to use the recvfrom() function instead of recv() as it was
+# for the TCP protocol is implemented
 
 import socket
 
@@ -20,7 +20,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
         s.sendto(data.upper(), addr)
 
 
-# Напишіть клієнтський додаток, який відправляє дані на сервер та очікує відповіді.
+# Write a client application that sends data to the server and waits for a response.
 
 HOST = "127.0.0.1"
 PORT = 65432
