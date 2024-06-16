@@ -1,7 +1,6 @@
-# Завдання 1
-
-# Напишіть декоратор, який друкує функцію з переданими їй аргументами.
-# ПРИМІТКА! Він повинен друкувати функцію, а не результат її виконання!
+# Task 1
+# Write a decorator that prints the function with the arguments passed to it.
+# NOTE! It should print the function, not the result of its execution!
 
 from functools import wraps
 
@@ -20,7 +19,7 @@ args=("HeY!", "Ya!")
 print(say_hi(args))
 
 
-# 2. Напишіть декоратор, який виводить час виконання функції.
+# 2. Write a decorator that outputs the execution time of the function.
 # import time
 # def time_fun_decorator(func):
 #     @wraps(func)
@@ -45,9 +44,9 @@ print(say_hi(args))
 # time.perf_counter()
 
 
-# 3. Створіть декоратор, який перевіряє аргументи, передані у функцію,
-# і виводить повідомлення про помилку, якщо аргументи не задовольняють певні
-# умови.
+# 3. Create a decorator that checks the arguments passed to the function,
+# and prints an error message if the arguments do not satisfy certain ones
+# conditions
 
 # def my_decorator(func):
 #     @wraps(func)
